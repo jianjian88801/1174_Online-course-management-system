@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TiwenjiedaDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TiwenjiedaEntity" id="tiwenjiedaMap">
+        <result property="kechengmingcheng" column="kechengmingcheng"/>
+        <result property="kemuleixing" column="kemuleixing"/>
+        <result property="tiwenneirong" column="tiwenneirong"/>
+        <result property="tiwenjieda" column="tiwenjieda"/>
+        <result property="jiedariqi" column="jiedariqi"/>
+        <result property="xuehao" column="xuehao"/>
+        <result property="jiaoshigonghao" column="jiaoshigonghao"/>
+        <result property="jiaoshixingming" column="jiaoshixingming"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TiwenjiedaVO" >
+		SELECT * FROM tiwenjieda  tiwenjieda         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TiwenjiedaVO" >
+		SELECT  tiwenjieda.* FROM tiwenjieda  tiwenjieda 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TiwenjiedaView" >
+
+		SELECT  tiwenjieda.* FROM tiwenjieda  tiwenjieda 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TiwenjiedaView" >
+		SELECT * FROM tiwenjieda  tiwenjieda <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
